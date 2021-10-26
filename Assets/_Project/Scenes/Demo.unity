@@ -16317,7 +16317,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 104492013}
   m_HandleRect: {fileID: 104492012}
   m_Direction: 3
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -37097,7 +37097,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 360833900}
   m_HandleRect: {fileID: 360833899}
   m_Direction: 3
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -45599,7 +45599,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 732146239}
   m_HandleRect: {fileID: 732146238}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -63597,6 +63597,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthStatName: Health
+  _attackStatName: Melee Attack
   group: {fileID: 11400000, guid: a9f217f9c34dc9e4689df23d8bfb74e9, type: 2}
   headTransform: {fileID: 2037791066}
   relationshipSystem: {fileID: 11400000, guid: dfec581f065b9bc49b03a8bf07c72d0a, type: 2}
@@ -65320,12 +65321,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5986078120382575890, guid: cdbb24716172c4048ba6335711275d24, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5986078120382575890, guid: cdbb24716172c4048ba6335711275d24, type: 3}
       propertyPath: walkingSpeed
       value: 0.9396149
       objectReference: {fileID: 0}
+    - target: {fileID: 5986078120382575900, guid: cdbb24716172c4048ba6335711275d24, type: 3}
+      propertyPath: singleAnimations.dyingAnimations.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 4348485665485846014, guid: 8c3a608e34757514db3e3629e035ba7e, type: 3}
     - target: {fileID: 5986078120382575901, guid: cdbb24716172c4048ba6335711275d24, type: 3}
       propertyPath: aiGroup
       value: 
@@ -93433,11 +93438,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1720222182}
   m_CullTransparentMesh: 0
---- !u!4 &1724433372 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6874675270860965890, guid: 74b0730caa51c7248ab53a1ac8a6b79b, type: 3}
-  m_PrefabInstance: {fileID: 1826275885}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1730416631
 GameObject:
   m_ObjectHideFlags: 0
@@ -104976,54 +104976,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03bbd7879176dc4aa75c6ab244039a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ragdollCreator:
-    ragdollPrefab: {fileID: 0}
-    sourceRoot: {fileID: 0}
-  characterSounds:
-    footstepSounds: {fileID: 0}
-    gotHitSound: {fileID: 0}
-    chanceToPlayGotHitSound: 0
-    dieSound: {fileID: 0}
-    fightSound: {fileID: 0}
-    chanceToPlayFightSound: 0
-    attackSound: {fileID: 0}
-    chanceToPlayAttackSound: 0
-  onReceivedDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  onGotHit:
-    m_PersistentCalls:
-      m_Calls: []
-  onAttack:
-    m_PersistentCalls:
-      m_Calls: []
-  walkingSpeed: 1
-  runningSpeed: 2
-  armor: 20
-  health: 100
-  maxHealth: 100
-  healthRegeneration: 0
-  healthRegenerationSpeed: 1
-  useRagdoll: 0
-  reserveDestinationPosition: 0
-  showGuiInfo: 0
-  aimTransform: {fileID: 1724433372}
-  onKilled:
-    m_PersistentCalls:
-      m_Calls: []
-  aiJobHandler:
-    conflictBehaviour: 0
-    runningTasksInfo: []
-    queueTasksInfo: []
-  removeDead: 1
-  removeDeadAfter: 30
-  useSoundPreset: 0
-  soundsPreset: {fileID: 0}
-  debugObjectDetecionEvents: 0
-  debutTargetDetectionEvents: 0
-  radius: 0.5
-  danger: 0
-  _healthStatName: Health
 --- !u!1 &1985169413
 GameObject:
   m_ObjectHideFlags: 0

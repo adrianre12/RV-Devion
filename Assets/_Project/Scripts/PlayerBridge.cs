@@ -1,6 +1,3 @@
-// Original created by Ronis Vision. All rights reserved
-// 03.07.2021.
-
 using System;
 using DevionGames.StatSystem;
 using RVHonorAI;
@@ -10,32 +7,16 @@ using UnityEngine;
 using UnityEngine.Events;
 using Object = UnityEngine.Object;
 
-public class PlayerCharacter : MonoBehaviour, ICharacter
+public class PlayerBridge : MonoBehaviour, ICharacter
 {
-    /// <summary>
-    /// This is called by the NPC to apply damage to the player. The return value should be the actuall damage done to the player after all protections (buffs, equipment etc) have been applied. 
-    /// </summary>
-    public float ReceiveDamage(float _damage, Object _damageSource, DamageType _damageType, bool _damageEnemyOnly = false, Vector3 hitPoint = default, Vector3 _hitForce = default, float forceRadius = default)
-    {
-        //Debug.LogFormat("Damage recieved {0}", _damage);
-        if(statsHandler != null)
-        {
-            //statsHandler.ApplyDamage(_healthStatName, _damage);
-        }
-        return _damage;
-    }
-
     private StatsHandler statsHandler;
 
     [SerializeField]
     private string _healthStatName = "Health";
 
-    void Start()
-    {
-        statsHandler = GetComponent<StatsHandler>();
-        if (statsHandler == null)
-            Debug.LogWarning("No StatsHandler found for " + this.name);
-    }
+    [Tooltip("This is only used to calcuate the Danger value")]
+    [SerializeField]
+    private string _attackStatName = "Melee Attack";
 
     #region Fields
 
@@ -54,7 +35,6 @@ public class PlayerCharacter : MonoBehaviour, ICharacter
 
     #region Properties
 
-    //        public Object GetObject => this;
 
     public float Danger => .1f * HitPoints * .1f * DamagePerSecond;
     public float MaxHitPoints { get; }
@@ -70,12 +50,16 @@ public class PlayerCharacter : MonoBehaviour, ICharacter
     public Transform AimTransform => headTransform;
     public Transform HeadTransform => headTransform;
 
-    public float HitPoints { get; set; } = 100;
+    public float HitPoints
+    {
+        get => (statsHandler.GetStat(_healthStatName) as DevionGames.StatSystem.Attribute).CurrentValue;
+        set { }
+    }
 
     public bool TreatNeutralCharactersAsEnemies { get; }
 
-    public float DamagePerSecond => 4;
-
+    public float DamagePerSecond => statsHandler.GetStat(_attackStatName).Value;
+    
     public float Armor => 20;
 
     public float Courage => 50;
@@ -95,7 +79,29 @@ public class PlayerCharacter : MonoBehaviour, ICharacter
 
     #endregion
 
-    #region Public methods
+    #region Private methods
+
+    void Start()
+    {
+        statsHandler = GetComponent<StatsHandler>();
+        if (statsHandler == null)
+            Debug.LogWarning($"No StatsHandler found for {this.name}");
+    }
+    #endregion
+
+    #region Public Methods
+    /// <summary>
+    /// This is called by the NPC to apply damage to the player. The return value should be the actuall damage done to the player after all protections (buffs, equipment etc) have been applied. 
+    /// </summary>
+    public float ReceiveDamage(float _damage, Object _damageSource, DamageType _damageType, bool _damageEnemyOnly = false, Vector3 hitPoint = default, Vector3 _hitForce = default, float forceRadius = default)
+    {
+        //Debug.LogFormat("Damage recieved {0}", _damage);
+        if (statsHandler != null)
+        {
+            statsHandler.ApplyDamage(_healthStatName, _damage);
+        }
+        return _damage;
+    }
 
     public void Kill() => throw new NotImplementedException();
 

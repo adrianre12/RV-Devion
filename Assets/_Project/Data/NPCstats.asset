@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: Health
   m_EditorClassIdentifier: 
   m_StatName: Health
-  m_BaseValue: 100
+  m_BaseValue: 1
   m_FormulaGraph:
     serializationData: "{\n\t\"Nodes\":[{\n\t\t\"Type\":\"DevionGames.Graphs.FormulaOutput\",\n\t\t\"id\":\"e40f21c4-45e5-426c-a775-84ec5cdd0325\",\n\t\t\"name\":\"Formula
       Output\",\n\t\t\"position\":\"v2(0,0)\",\n\t\t\"m_Ports\":{\n\t\t\t\"0\":{\n\t\t\t\t\"fieldName\":\"result\",\n\t\t\t\t\"drawPort\":true,\n\t\t\t\t\"label\":false,\n\t\t\t\t\"capacity\":\"Single\",\n\t\t\t\t\"direction\":\"Input\",\n\t\t\t\t\"m_Connections\":{\n\t\t\t\t\t\n\t\t\t\t},\n\t\t\t\t\"m_FieldTypeName\":\"System.Single\"\n\t\t\t}\n\t\t},\n\t\t\"result\":0\n\t}]\n}"
