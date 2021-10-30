@@ -70531,6 +70531,39 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
+--- !u!1 &1334429472 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5326137133451433936, guid: cdbb24716172c4048ba6335711275d24, type: 3}
+  m_PrefabInstance: {fileID: 1234106904}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1334429475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334429472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1743e6e75a7e4df0867019de1a083f2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  animationClip: {fileID: -1917534867160987562, guid: b146db88db1a0444cba6aeeb33b2a884, type: 3}
+  damageOnlyEnemies: 1
+  damageTime: 0
+  setDurationAndTimeFromAnimationClip: 1
+  damageOverride: 0
+  rangeOverride: 0
+  attackDurationOverride: 0
+  attackAngleOverride: 0
+  attackDurationMultiplier: 1
+  damageMultiplier: 1
+  rangeMultiplier: 1
+  attackAngleMultiplier: 1
+  preference: 1
+  attackSound: {fileID: 0}
+  hitSound: {fileID: 0}
 --- !u!1 &1334835862
 GameObject:
   m_ObjectHideFlags: 0
