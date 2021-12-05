@@ -61,4 +61,5 @@ crashlytics-build.properties
 
 /[Aa]ssets/*
 !/[Aa]ssets/_[Pp]roject/
-#!/[Aa]ssets/_[Pp]roject/**/*
+!/[Aa]ssets/RVDevion/
+!/[Aa]ssets/RVDevionExamples/
