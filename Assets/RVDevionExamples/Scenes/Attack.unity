@@ -16322,7 +16322,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 104492013}
   m_HandleRect: {fileID: 104492012}
   m_Direction: 3
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -65038,7 +65038,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1850132166}
   m_HandleRect: {fileID: 1850132165}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -83406,7 +83406,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 766214255}
   m_HandleRect: {fileID: 766214254}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -111145,9 +111145,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   saveable: 1
-  m_Items: []
-  m_Amounts: 
-  m_Modifiers: []
+  m_Items:
+  - {fileID: 960666660569578442, guid: 1ae57b994efcab048a1bb130d4e11d83, type: 2}
+  m_Amounts: 01000000
+  m_Modifiers:
+  - modifiers: []
   onChange:
     m_PersistentCalls:
       m_Calls: []
