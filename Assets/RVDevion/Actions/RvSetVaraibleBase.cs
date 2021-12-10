@@ -119,37 +119,37 @@ namespace RVDevion
                     }
                 case GraphVarType.Vector2:
                     {
-                        v.AssureStringExist(variableName);
+                        v.AssureVector2Exist(variableName);
                         v.SetVector2(variableName, (Vector2)graphVarValue);
                         break;
                     }
                 case GraphVarType.Vector3:
                     {
-                        v.AssureStringExist(variableName);
+                        v.AssureVector3Exist(variableName);
                         v.SetVector3(variableName, (Vector3)graphVarValue);
                         break;
                     }
                 case GraphVarType.Vector3List:
                     {
-                        v.AssureStringExist(variableName);
+                        v.AssureVector3ListExist(variableName);
                         v.SetVector3List(variableName, (List<Vector3>)graphVarValue);
                         break;
                     }
                 case GraphVarType.LayerMask:
                     {
-                        v.AssureStringExist(variableName);
+                        v.AssureLayerMaskExist(variableName);
                         v.SetLayerMask(variableName, (LayerMask)graphVarValue);
                         break;
                     }
                 case GraphVarType.AnimationCurve:
                     {
-                        v.AssureStringExist(variableName);
+                        v.AssureAnimationCurveExist(variableName);
                         v.SetAnimationCurve(variableName, (AnimationCurve)graphVarValue);
                         break;
                     }
                 case GraphVarType.UnityObject:
                     {
-                        v.AssureStringExist(variableName);
+                        v.AssureUnityObjectExist(variableName);
                         v.SetUnityObject(variableName, (Object)graphVarValue);
                         break;
                     }

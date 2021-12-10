@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace RVDevion
 {
-    public class RVSetFloat : RvSetVaraibleBase
+    public class RVSetVector3 : RvSetVaraibleBase
     {
         public bool useBlackboard;
         [Tooltip("If empty Variable Name will be used")]
@@ -18,7 +18,7 @@ namespace RVDevion
             _useBlackboard = useBlackboard; // done this way as the ConditionalHide does not work in super class
             _blackboardVarName = blackboardVarName;
             graphVarValue = value;
-            graphVarType = GraphVarType.@float;
+            graphVarType = GraphVarType.Vector3;
             return base.OnUpdate();
         }
     }

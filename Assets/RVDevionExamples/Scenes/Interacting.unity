@@ -38423,6 +38423,22 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - eventID: OnClose
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1695567272}
+          m_TargetAssemblyTypeName: DevionGames.UIWidgets.UIWidget, DevionGames.UIWidgets
+          m_MethodName: Close
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   name: Vendor
   priority: 0
   m_KeyCode: 0
@@ -116196,6 +116212,7 @@ MonoBehaviour:
   - id: 0
   - id: 1
   - id: 2
+  - id: 3
   m_Interruptable: 0
   m_BuyPriceFactor: 1
   m_SellPriceFactor: 1
@@ -116236,6 +116253,15 @@ MonoBehaviour:
         blackboardVarName: 
         value: 1
     00000002:
+      type: {class: RVSetPosition, ns: RVDevion, asm: RVDevion}
+      data:
+        m_Type: RVDevion.RVSetPosition
+        m_Enabled: 1
+        graphName: 
+        variableName: PlayerPosition
+        setOnEnd: 0
+        _sourcePosition: 1
+    00000003:
       type: {class: ShowWindow, ns: DevionGames.InventorySystem, asm: DevionGames.InventorySystem}
       data:
         m_Type: DevionGames.InventorySystem.ShowWindow
