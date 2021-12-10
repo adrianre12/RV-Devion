@@ -10,7 +10,7 @@ using Object = UnityEngine.Object;
     /// <summary>
     /// Rrotate ai agent toward a position using simple transform manipulation and by using root motion
     /// </summary>
-    public class TurnTowardPostition : AiJob
+    public class TurnTowardPosition : AiJob
     {
         [SerializeField]
         private Vector3Provider _position;
