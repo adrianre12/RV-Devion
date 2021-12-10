@@ -16322,7 +16322,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 104492013}
   m_HandleRect: {fileID: 104492012}
   m_Direction: 3
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -83316,7 +83316,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 766214255}
   m_HandleRect: {fileID: 766214254}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -91044,6 +91044,10 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: b8b48c4d6a98902478cd81dc8e386cee, type: 3}
     - target: {fileID: 2740522862135884627, guid: 73000691bb97ca545a8d09fd0c6f5865, type: 3}
       propertyPath: m_FocusPlayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2740522862135884627, guid: 73000691bb97ca545a8d09fd0c6f5865, type: 3}
+      propertyPath: m_DynamicContainer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2740522862135884627, guid: 73000691bb97ca545a8d09fd0c6f5865, type: 3}
@@ -115309,6 +115313,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1128504441766827387, guid: dc824234c504e3d47b6a7f644b1fafef, type: 3}
+      propertyPath: aiGraph
+      value: 
+      objectReference: {fileID: 6875004110906239683, guid: 6a5016cf88fab6a4091607a57e6e1230, type: 3}
+    - target: {fileID: 1128504441766827387, guid: dc824234c504e3d47b6a7f644b1fafef, type: 3}
       propertyPath: contextProvider
       value: 
       objectReference: {fileID: 5986078121314144005}
@@ -115444,7 +115452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints:
-  - radius: 0
+  - radius: 5
     position: {x: 0, y: 0, z: 0}
   moveTarget: {fileID: 0}
   setTarget: {fileID: 0}
@@ -116184,7 +116192,10 @@ MonoBehaviour:
   triggerType: 43
   key: 102
   actionTemplate: {fileID: 0}
-  actions: []
+  actions:
+  - id: 0
+  - id: 1
+  - id: 2
   m_Interruptable: 0
   m_BuyPriceFactor: 1
   m_SellPriceFactor: 1
@@ -116202,6 +116213,35 @@ MonoBehaviour:
   m_SellDialogButton: Sell
   references:
     version: 1
+    00000000:
+      type: {class: RVSetBool, ns: RVDevion, asm: RVDevion}
+      data:
+        m_Type: RVDevion.RVSetBool
+        m_Enabled: 1
+        graphName: 
+        variableName: StopMoving
+        setOnEnd: 1
+        useBlackboard: 0
+        blackboardVarName: test
+        value: 0
+    00000001:
+      type: {class: RVSetBool, ns: RVDevion, asm: RVDevion}
+      data:
+        m_Type: RVDevion.RVSetBool
+        m_Enabled: 1
+        graphName: 
+        variableName: StopMoving
+        setOnEnd: 0
+        useBlackboard: 0
+        blackboardVarName: 
+        value: 1
+    00000002:
+      type: {class: ShowWindow, ns: DevionGames.InventorySystem, asm: DevionGames.InventorySystem}
+      data:
+        m_Type: DevionGames.InventorySystem.ShowWindow
+        m_Enabled: 1
+        m_WindowName: Vendor
+        m_DestroyWhenEmpty: 0
 --- !u!114 &6905068829679284914
 MonoBehaviour:
   m_ObjectHideFlags: 0

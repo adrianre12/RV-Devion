@@ -9,13 +9,19 @@ namespace RVDevion
 {
     public abstract class RvSetVaraibleBase : DevionGames.Action
     {
-        public string graphName = "BaseGraph";
+        [Tooltip("Name of the graph to use, if blank select main graph")]
+        public string graphName = "";
         public string variableName;
+        [Tooltip("Defer setting the variable until the action sequence ends.")]
+        public bool setOnEnd;
 
         private AiGraph _graph;
+        private bool _setDone;
         protected GraphVarType graphVarType;
         protected object graphVarValue;
-        
+        protected bool _useBlackboard;
+        protected string _blackboardVarName;
+
         public override ActionStatus OnUpdate()
         {
             _graph = null;
@@ -24,10 +30,11 @@ namespace RVDevion
                 Debug.Log("CharacterAI component not found");
                 return ActionStatus.Failure;
             }
-            if (_characterAi?.Ai.MainAiGraph.name == graphName)
+            if (graphName == "" || _characterAi?.Ai.MainAiGraph.name == graphName)
             {
                 _graph = _characterAi?.Ai.MainAiGraph;
-            } else
+            }
+            else
             {
                 AiGraph[] graphs = _characterAi?.Ai.SecondaryGraphs;
                 _graph = graphs.FirstOrDefault<AiGraph>(g => g.name == graphName);
@@ -39,6 +46,44 @@ namespace RVDevion
                 return ActionStatus.Failure;
             }
 
+            if (_useBlackboard)
+            {
+                _blackboardVarName = _blackboardVarName == "" ? variableName : _blackboardVarName;
+                if (blackboard == null)
+                {
+                    Debug.LogWarning("Blackboard not found");
+                    return ActionStatus.Failure;
+                }
+                Variable bvar = blackboard.GetVariable(_blackboardVarName);
+                if (bvar == null)
+                {
+                    Debug.LogWarning($"Blackboard variable {_blackboardVarName} not found");
+                    return ActionStatus.Failure;
+                }
+                if (bvar.GetType() != graphVarValue.GetType())
+                {
+                    Debug.LogWarning($"Blackboard variable {_blackboardVarName} is not a {graphVarValue.GetType()}");
+                    return ActionStatus.Failure;
+                }
+                graphVarValue = bvar.RawValue;
+            }
+
+            _setDone = false;
+            if (!setOnEnd)
+                SetVariable();
+
+            return ActionStatus.Success;
+        }
+
+        public override void OnSequenceEnd()
+        {
+            if (!_setDone) // this stops the variable being set twice.
+                SetVariable();
+            base.OnSequenceEnd();
+        }
+
+        protected void SetVariable() {
+            Debug.Log("Setting var");
             AiVariables v = _graph.GraphAiVariables;
             switch (graphVarType)
             {
@@ -109,8 +154,7 @@ namespace RVDevion
                         break;
                     }
             }
-
-            return ActionStatus.Success;
+            _setDone = true;
         }
 
 
