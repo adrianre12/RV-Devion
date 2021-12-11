@@ -150,6 +150,58 @@ MonoBehaviour:
   aiGraph: {fileID: 6875004110906239683}
   lastScore: 0
   taskScorers: []
+--- !u!1 &1574592706362065077
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 106201922017577526}
+  - component: {fileID: 1860213000664384057}
+  m_Layer: 0
+  m_Name: Smell of Brute (SumAiUtility)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &106201922017577526
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574592706362065077}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4776474554503716906}
+  m_Father: {fileID: 5081820318457244991}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1860213000664384057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574592706362065077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4d85c947f0c4e2ab3beb43067254768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enabled: 1
+  graphElementName: Smell of Brute
+  description: 
+  aiGraph: {fileID: 6875004110906239683}
+  scorers:
+  - {fileID: 8180847667419132071}
+  lastScore: 0
+  tasks: []
 --- !u!1 &1692050896782123152
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,6 +234,7 @@ Transform:
   - {fileID: 5081820318457244991}
   - {fileID: 7188210108383738260}
   - {fileID: 7014035179495423790}
+  - {fileID: 7865274776073414521}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -201,6 +254,7 @@ MonoBehaviour:
   - {fileID: 2561116295347529220}
   - {fileID: 1984206138975779734}
   - {fileID: 1848241432810320991}
+  - {fileID: 3885652192061019040}
   description: 
   owner: {fileID: 0}
   parentGraph: {fileID: 0}
@@ -361,6 +415,64 @@ MonoBehaviour:
   - {fileID: 6883949348874092858}
   - {fileID: 8840045268551671566}
   - {fileID: 5166020934421391521}
+  - {fileID: 1860213000664384057}
+--- !u!1 &2861941847467571563
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4776474554503716906}
+  - component: {fileID: 8180847667419132071}
+  m_Layer: 0
+  m_Name: ' (QuestStatusScorer)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4776474554503716906
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2861941847467571563}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 106201922017577526}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8180847667419132071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2861941847467571563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8341b5076d285948b121531a17e3fd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enabled: 1
+  graphElementName: 
+  description: 
+  aiGraph: {fileID: 6875004110906239683}
+  scorerType: 0
+  score: 1
+  lastScore: 0
+  _quest: {fileID: 3778003969081593138, guid: e8c05ba868b395849aa19e7b21106128, type: 2}
+  _inactive: 0
+  _active: 0
+  _completed: 4
+  _failed: 0
+  _canceled: 0
+  _default: 0
 --- !u!1 &3204073514702975036
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,6 +960,73 @@ MonoBehaviour:
   lastScore: 0
   taskScorers: []
   movementSpeed: 0
+--- !u!1 &5272479449374328830
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7865274776073414521}
+  - component: {fileID: 3885652192061019040}
+  m_Layer: 0
+  m_Name: <<<NODE>>> GRAPH NODE <<<NODE>>>
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7865274776073414521
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5272479449374328830}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3969315811489380398}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3885652192061019040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5272479449374328830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfdfe487959545dc873bf3b593e62dfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  graph: {fileID: 6875004110906239683}
+  position: {x: -24, y: 472}
+  ports:
+    keys:
+    - input
+    values:
+    - _fieldName: input
+      _node: {fileID: 3885652192061019040}
+      _typeQualifiedName: RVModules.RVSmartAI.GraphElements.Utilities.AiUtility,
+        RVSmartAI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output4
+        node: {fileID: 2561116295347529220}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _dynamic: 0
+  _name: Graph Node
+  expanded: 1
+  selectedElement: {fileID: 0}
+  description: 
+  aiGraph: {fileID: 6875004110906239683}
+  input: {fileID: 0}
+  graphReference: {fileID: 6875004110906239683, guid: e992a56ccfe863a4a9755453edde6f82, type: 3}
 --- !u!1 &6390466661383203153
 GameObject:
   m_ObjectHideFlags: 0
@@ -1195,6 +1374,7 @@ Transform:
   - {fileID: 6555645494610248700}
   - {fileID: 182450585200940985}
   - {fileID: 6359044064070243089}
+  - {fileID: 106201922017577526}
   m_Father: {fileID: 3969315811489380398}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1257,7 +1437,10 @@ MonoBehaviour:
       _node: {fileID: 2561116295347529220}
       _typeQualifiedName: RVModules.RVSmartAI.GraphElements.Utilities.AiUtility,
         RVSmartAI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: input
+        node: {fileID: 3885652192061019040}
+        reroutePoints: []
       _direction: 1
       _connectionType: 1
       _dynamic: 0
@@ -1295,7 +1478,7 @@ MonoBehaviour:
       _dynamic: 0
   _name: Main decision node
   expanded: 1
-  selectedElement: {fileID: 4952391131340426299}
+  selectedElement: {fileID: 1860213000664384057}
   description: 
   aiGraph: {fileID: 6875004110906239683}
   stage: {fileID: 1873786780169361868}
@@ -1318,7 +1501,7 @@ GameObject:
   - component: {fileID: 7014035179495423790}
   - component: {fileID: 1848241432810320991}
   m_Layer: 0
-  m_Name: <<<NODE>>> CONDITION NODE <<<NODE>>>
+  m_Name: <<<NODE>>> FACE PLAYER <<<NODE>>>
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1353,7 +1536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   graph: {fileID: 6875004110906239683}
-  position: {x: 24, y: 328}
+  position: {x: -8, y: 296}
   ports:
     keys:
     - input
@@ -1387,9 +1570,9 @@ MonoBehaviour:
       _direction: 1
       _connectionType: 1
       _dynamic: 0
-  _name: Condition Node
+  _name: Face Player
   expanded: 1
-  selectedElement: {fileID: 1540645015234857404}
+  selectedElement: {fileID: 0}
   description: 
   aiGraph: {fileID: 6875004110906239683}
   scorer: {fileID: 2115955578550289642}
