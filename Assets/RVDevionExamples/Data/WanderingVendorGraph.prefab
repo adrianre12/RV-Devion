@@ -246,7 +246,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4776474554503716906}
+  - {fileID: 4923002349215924860}
   m_Father: {fileID: 5081820318457244991}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -267,7 +267,7 @@ MonoBehaviour:
   description: 
   aiGraph: {fileID: 6875004110906239683}
   scorers:
-  - {fileID: 8180847667419132071}
+  - {fileID: 6273446394010557054}
   lastScore: 0
   tasks: []
 --- !u!1 &1692050896782123152
@@ -484,63 +484,6 @@ MonoBehaviour:
   - {fileID: 8840045268551671566}
   - {fileID: 5166020934421391521}
   - {fileID: 1860213000664384057}
---- !u!1 &2861941847467571563
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4776474554503716906}
-  - component: {fileID: 8180847667419132071}
-  m_Layer: 0
-  m_Name: ' (QuestStatusScorer)'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4776474554503716906
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2861941847467571563}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 106201922017577526}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8180847667419132071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2861941847467571563}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8341b5076d285948b121531a17e3fd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enabled: 1
-  graphElementName: 
-  description: 
-  aiGraph: {fileID: 6875004110906239683}
-  scorerType: 0
-  score: 1
-  lastScore: 0
-  _quest: {fileID: 3778003969081593138, guid: e8c05ba868b395849aa19e7b21106128, type: 2}
-  _inactive: 0
-  _active: 0
-  _completed: 4
-  _failed: 0
-  _canceled: 0
-  _default: 0
 --- !u!1 &3204073514702975036
 GameObject:
   m_ObjectHideFlags: 0
@@ -1391,7 +1334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   graph: {fileID: 6875004110906239683}
-  position: {x: -376, y: 168}
+  position: {x: -392, y: 56}
   ports:
     keys:
     - output7
@@ -1584,3 +1527,61 @@ MonoBehaviour:
   input: {fileID: 0}
   output1: {fileID: 0}
   output2: {fileID: 0}
+--- !u!1 &8768619651912541880
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4923002349215924860}
+  - component: {fileID: 6273446394010557054}
+  m_Layer: 0
+  m_Name: ' (QuestStatusListenerScorer)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4923002349215924860
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8768619651912541880}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 106201922017577526}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6273446394010557054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8768619651912541880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dd079e7ca3840b4ab059682820802b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enabled: 1
+  graphElementName: 
+  description: 
+  aiGraph: {fileID: 6875004110906239683}
+  scorerType: 0
+  score: 0
+  lastScore: 0
+  _quest: {fileID: 3778003969081593138, guid: e8c05ba868b395849aa19e7b21106128, type: 2}
+  _inactive: 0
+  _active: 0
+  _completed: 5
+  _failed: 0
+  _canceled: 0
+  _default: 0
+  _oneShot: 0

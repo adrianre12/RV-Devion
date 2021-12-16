@@ -22,36 +22,63 @@ public class QuestStatusScorer : AiScorer
     [Tooltip("The value returned if the quest is not found")]
     [SerializeField]
     protected float _default = -1f;
+    [Tooltip("Returns the status score once then resets the score to the default value")]
+    [SerializeField]
+    protected bool _oneShot;
+
+    private float _statusScore;
+
+    public void Start()
+    {
+        QuestManager.current.OnQuestStatusChanged += OnQuestStatusChanged;
+    }
+
+    public void OnQuestStatusChanged(Quest quest)
+    {
+        if (quest.Name != _quest.Name)
+            return;
+
+        switch (quest.Status)
+        {
+            case Status.Inactive:
+                {
+                    _statusScore = _inactive;
+                    break;
+                }
+            case Status.Active:
+                {
+                    _statusScore = _active;
+                    break;
+                }
+            case Status.Completed:
+                {
+                    _statusScore = _completed;
+                    break;
+                }
+            case Status.Failed:
+                {
+                    _statusScore = _failed;
+                    break;
+                }
+            case Status.Canceled:
+                {
+                    _statusScore = _canceled;
+                    break;
+                }
+            default:
+                {
+                    _statusScore = _default;
+                    break;
+                }
+        }
+    }
 
     public override float Score(float _deltaTime)
     {
-        if (QuestManager.current.HasQuest(_quest, out Quest quest))
-        {
-            switch (quest.Status)
-            {
-                case Status.Inactive:
-                    {
-                        return _inactive;
-                    }
-                case Status.Active:
-                    {
-                        return _active;
-                    }
-                case Status.Completed:
-                    {
-                        return _completed;
-                    }
-                case Status.Failed:
-                    {
-                        return _failed;
-                    }
-                case Status.Canceled:
-                    {
-                        return _canceled;
-                    }
-            }
-        }
-        return _default;
+        float score = _statusScore;
+        if (_oneShot)
+            _statusScore = _default;
+        return score;
     }
 }
 
