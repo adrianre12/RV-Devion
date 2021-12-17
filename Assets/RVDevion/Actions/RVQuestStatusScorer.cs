@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 [System.Serializable]
-public class QuestStatusScorer : AiScorer
+public class RVQuestStatusScorer : AiScorer
 {
     [QuestPicker(true)]
     [SerializeField]
@@ -30,6 +30,10 @@ public class QuestStatusScorer : AiScorer
 
     public void Start()
     {
+        _statusScore = _default;
+        if (QuestManager.current.HasQuest(_quest, out Quest quest))
+            SetStatusScore(quest.Status);
+
         QuestManager.current.OnQuestStatusChanged += OnQuestStatusChanged;
     }
 
@@ -37,8 +41,12 @@ public class QuestStatusScorer : AiScorer
     {
         if (quest.Name != _quest.Name)
             return;
+        SetStatusScore(quest.Status);
+    }
 
-        switch (quest.Status)
+    private void SetStatusScore(Status status)
+    {
+        switch (status)
         {
             case Status.Inactive:
                 {
